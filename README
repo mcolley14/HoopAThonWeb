@@ -1,1 +1,37 @@
-README for HoopATHon Website
+README for HoopAThon Website
+
+## HoopAThon Event Page
+
+This repository contains a static non-profit event page for HoopAThon, an annual
+fundraiser held in April.
+
+### Included functionality
+
+- Event overview and mission details
+- "How pledges work" section (per-basket and lump sum)
+- Donation button that scrolls users directly to the donation form
+- Donation form with:
+  - per-basket or lump-sum selection
+  - live estimated total calculator
+  - client-side validation
+- Individual participant signup form
+- Corporate team signup form
+- Local impact tracker that shows counts of:
+  - individual signups
+  - corporate team signups
+  - donations logged
+
+All form submissions are stored in browser localStorage for demo purposes.
+
+## Run locally
+
+Because this is a static site, you can open `index.html` directly in a browser.
+For best results, run a simple local server from the repository root:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then visit:
+
+http://localhost:8080

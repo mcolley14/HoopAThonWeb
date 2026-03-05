@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoopAThon | Shoot for a Cause</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand">HoopAThon</a>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#pledges">How Pledges Work</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#signup">Sign Up</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Annual Event • Every April</p>
+          <h1>HoopAThon: Shoot Free Throws. Change Lives.</h1>
+          <p class="hero-text">
+            Join our annual HoopAThon fundraiser this April. Participants collect
+            pledges, shoot free throws, and raise vital funds for families in
+            crisis.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#signup">Sign Up to Participate</a>
+            <button class="btn btn-secondary" id="donateButton" type="button">
+              Donate Now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <h2>What is HoopAThon?</h2>
+          <p>
+            HoopAThon is a community event where participants gather support from
+            family, friends, coworkers, and neighbors by collecting pledges.
+            During the event, each participant shoots free throws and funds are
+            raised based on their pledge commitments.
+          </p>
+          <p>
+            Proceeds from this year&apos;s event support the
+            <strong>Ronald McDonald House in UHNBC, Prince George</strong>.
+            Your support helps families stay close to loved ones receiving care.
+          </p>
+        </div>
+      </section>
+
+      <section class="section alt" id="pledges">
+        <div class="container">
+          <h2>How Pledges Work</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Per Basket Pledge</h3>
+              <p>
+                Supporters can pledge an amount for each free throw made (for
+                example, $2 per basket). The total is calculated after the event.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Lump Sum Pledge</h3>
+              <p>
+                Supporters can choose a one-time flat donation regardless of the
+                number of baskets made.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Mixed Support</h3>
+              <p>
+                Donors can combine both options to maximize impact and help
+                participants reach their fundraising goals.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="impact">
+        <div class="container">
+          <h2>Community Impact Tracker</h2>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <p class="stat-label">Individual Signups</p>
+              <p class="stat-value" id="individualCount">0</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-label">Corporate Teams</p>
+              <p class="stat-value" id="teamCount">0</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-label">Donations Logged</p>
+              <p class="stat-value" id="donationCount">0</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="donate">
+        <div class="container narrow">
+          <h2>Make a Donation</h2>
+          <p>
+            Use this form to log a donation pledge. For online payment processing,
+            connect the final “Complete Donation” button to your preferred
+            payment provider.
+          </p>
+          <form id="donationForm" novalidate>
+            <div class="form-row">
+              <label for="donorName">Donor Name</label>
+              <input id="donorName" name="donorName" type="text" required />
+            </div>
+            <div class="form-row">
+              <label for="donorEmail">Donor Email</label>
+              <input id="donorEmail" name="donorEmail" type="email" required />
+            </div>
+            <div class="form-row">
+              <label for="donationType">Donation Type</label>
+              <select id="donationType" name="donationType" required>
+                <option value="per_basket">Per basket pledge</option>
+                <option value="lump_sum">Lump sum pledge</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="pledgeAmount">Pledge Amount (CAD)</label>
+              <input
+                id="pledgeAmount"
+                name="pledgeAmount"
+                type="number"
+                min="1"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form-row" id="basketRow">
+              <label for="expectedBaskets">Expected Baskets</label>
+              <input
+                id="expectedBaskets"
+                name="expectedBaskets"
+                type="number"
+                min="1"
+                step="1"
+                value="25"
+              />
+            </div>
+            <p class="estimate" id="donationEstimate" aria-live="polite">
+              Estimated total: $0.00
+            </p>
+            <button class="btn btn-primary" type="submit">
+              Complete Donation
+            </button>
+            <p class="form-message" id="donationMessage" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="signup">
+        <div class="container">
+          <h2>Sign Up for HoopAThon</h2>
+          <div class="signup-grid">
+            <article class="panel">
+              <h3>Individual Participant Signup</h3>
+              <form id="individualForm" novalidate>
+                <div class="form-row">
+                  <label for="participantName">Full Name</label>
+                  <input id="participantName" name="participantName" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="participantEmail">Email</label>
+                  <input id="participantEmail" name="participantEmail" type="email" required />
+                </div>
+                <div class="form-row">
+                  <label for="participantPhone">Phone</label>
+                  <input id="participantPhone" name="participantPhone" type="tel" />
+                </div>
+                <div class="form-row">
+                  <label for="participantGoal">Fundraising Goal (CAD)</label>
+                  <input
+                    id="participantGoal"
+                    name="participantGoal"
+                    type="number"
+                    min="0"
+                    step="1"
+                    value="500"
+                  />
+                </div>
+                <button class="btn btn-primary" type="submit">Register as Individual</button>
+                <p class="form-message" id="individualMessage" aria-live="polite"></p>
+              </form>
+            </article>
+
+            <article class="panel">
+              <h3>Corporate Team Signup</h3>
+              <form id="teamForm" novalidate>
+                <div class="form-row">
+                  <label for="companyName">Company Name</label>
+                  <input id="companyName" name="companyName" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="teamContact">Team Contact Name</label>
+                  <input id="teamContact" name="teamContact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="teamEmail">Contact Email</label>
+                  <input id="teamEmail" name="teamEmail" type="email" required />
+                </div>
+                <div class="form-row">
+                  <label for="teamSize">Expected Team Size</label>
+                  <input id="teamSize" name="teamSize" type="number" min="2" step="1" required />
+                </div>
+                <div class="form-row">
+                  <label for="sponsorshipLevel">Sponsorship Level</label>
+                  <select id="sponsorshipLevel" name="sponsorshipLevel" required>
+                    <option value="community">Community Partner</option>
+                    <option value="champion">Hoop Champion</option>
+                    <option value="all_star">All-Star Sponsor</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary" type="submit">Register Corporate Team</button>
+                <p class="form-message" id="teamMessage" aria-live="polite"></p>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          HoopAThon • Annual April Fundraiser • Supporting Ronald McDonald House
+          UHNBC in Prince George
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
