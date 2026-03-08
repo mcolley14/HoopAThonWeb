@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HoopAThon | Shoot for a Cause</title>
+    <title>Hoop-A-Thon | Shoot for a Cause</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,6 +21,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#pledges">How Pledges Work</a></li>
             <li><a href="#donate">Donate</a></li>
+            <li><a href="#sponsorship">Sponsorship</a></li>
             <li><a href="#signup">Sign Up</a></li>
           </ul>
         </nav>
@@ -31,17 +32,22 @@
       <section class="hero">
         <div class="container hero-content">
           <p class="eyebrow">Annual Event • Every April</p>
-          <h1>HoopAThon: Shoot Free Throws. Change Lives.</h1>
+          <h1>Hoop-A-Thon: Shoot Free Throws. Make a difference in your community.</h1>
           <p class="hero-text">
-            Join our annual HoopAThon fundraiser this April. Participants collect
+            Join our annual Hoop-A-Thon fundraiser April 11th, 2026. Participants collect
             pledges, shoot free throws, and raise vital funds for families in
             crisis.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#signup">Sign Up to Participate</a>
-            <button class="btn btn-secondary" id="donateButton" type="button">
+            <a
+              href="https://pgcf.ca/fund/Prince-George-Rotary-Fund"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
               Donate Now
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -50,7 +56,7 @@
         <div class="container">
           <h2>What is HoopAThon?</h2>
           <p>
-            HoopAThon is a community event where participants gather support from
+            Hoop-A-Thon is a community event where participants gather support from
             family, friends, coworkers, and neighbors by collecting pledges.
             During the event, each participant shoots free throws and funds are
             raised based on their pledge commitments.
@@ -104,10 +110,6 @@
               <p class="stat-label">Corporate Teams</p>
               <p class="stat-value" id="teamCount">0</p>
             </article>
-            <article class="stat-card">
-              <p class="stat-label">Donations Logged</p>
-              <p class="stat-value" id="donationCount">0</p>
-            </article>
           </div>
         </div>
       </section>
@@ -116,56 +118,54 @@
         <div class="container narrow">
           <h2>Make a Donation</h2>
           <p>
-            Use this form to log a donation pledge. For online payment processing,
-            connect the final “Complete Donation” button to your preferred
-            payment provider.
+            Donations to HoopAThon support the Ronald McDonald House at UHNBC in
+            Prince George through the Prince George Community Foundation Flow
+            Through Fund.
           </p>
-          <form id="donationForm" novalidate>
-            <div class="form-row">
-              <label for="donorName">Donor Name</label>
-              <input id="donorName" name="donorName" type="text" required />
-            </div>
-            <div class="form-row">
-              <label for="donorEmail">Donor Email</label>
-              <input id="donorEmail" name="donorEmail" type="email" required />
-            </div>
-            <div class="form-row">
-              <label for="donationType">Donation Type</label>
-              <select id="donationType" name="donationType" required>
-                <option value="per_basket">Per basket pledge</option>
-                <option value="lump_sum">Lump sum pledge</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="pledgeAmount">Pledge Amount (CAD)</label>
-              <input
-                id="pledgeAmount"
-                name="pledgeAmount"
-                type="number"
-                min="1"
-                step="0.01"
-                required
-              />
-            </div>
-            <div class="form-row" id="basketRow">
-              <label for="expectedBaskets">Expected Baskets</label>
-              <input
-                id="expectedBaskets"
-                name="expectedBaskets"
-                type="number"
-                min="1"
-                step="1"
-                value="25"
-              />
-            </div>
-            <p class="estimate" id="donationEstimate" aria-live="polite">
-              Estimated total: $0.00
+          <a
+            href="https://pgcf.ca/fund/Prince-George-Rotary-Fund"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Donate Now
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="sponsorship">
+        <div class="container narrow">
+          <h2>Corporate Sponsorship</h2>
+          <p>
+            Support Hoop-A-Thon as a corporate sponsor. We offer three sponsorship
+            tiers. Contact us to express interest and arrange your donation.
+          </p>
+          <div class="sponsorship-tiers">
+            <article class="tier-card tier-display">
+              <span class="tier-name">Hoop Sponsor</span>
+              <span class="tier-price">$500</span>
+            </article>
+            <article class="tier-card tier-display">
+              <span class="tier-name">Court Sponsor</span>
+              <span class="tier-price">$1,500</span>
+            </article>
+            <article class="tier-card tier-display">
+              <span class="tier-name">Major Event Sponsor</span>
+              <span class="tier-price">$5,000</span>
+            </article>
+          </div>
+          <div class="contact-block">
+            <h3>Sponsorship Inquiries</h3>
+            <p>
+              Interested in becoming a sponsor? Contact us to discuss options and
+              arrange your donation.
             </p>
-            <button class="btn btn-primary" type="submit">
-              Complete Donation
-            </button>
-            <p class="form-message" id="donationMessage" aria-live="polite"></p>
-          </form>
+            <p>
+              <a href="mailto:sponsorship@hoopathon.ca" class="contact-link"
+                >sponsorship@hoopathon.ca</a
+              >
+            </p>
+          </div>
         </div>
       </section>
 
@@ -216,20 +216,12 @@
                   <input id="teamContact" name="teamContact" type="text" required />
                 </div>
                 <div class="form-row">
-                  <label for="teamEmail">Contact Email</label>
-                  <input id="teamEmail" name="teamEmail" type="email" required />
+                  <label for="teamEmail">Corporate Email</label>
+                  <input id="teamEmail" name="teamEmail" type="email" placeholder="e.g. events@company.com" required />
                 </div>
                 <div class="form-row">
                   <label for="teamSize">Expected Team Size</label>
                   <input id="teamSize" name="teamSize" type="number" min="2" step="1" required />
-                </div>
-                <div class="form-row">
-                  <label for="sponsorshipLevel">Sponsorship Level</label>
-                  <select id="sponsorshipLevel" name="sponsorshipLevel" required>
-                    <option value="community">Community Partner</option>
-                    <option value="champion">Hoop Champion</option>
-                    <option value="all_star">All-Star Sponsor</option>
-                  </select>
                 </div>
                 <button class="btn btn-primary" type="submit">Register Corporate Team</button>
                 <p class="form-message" id="teamMessage" aria-live="polite"></p>
@@ -249,6 +241,8 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
