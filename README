@@ -9,19 +9,24 @@ fundraiser held in April.
 
 - Event overview and mission details
 - "How pledges work" section (per-basket and lump sum)
-- Donation button that scrolls users directly to the donation form
-- Donation form with:
-  - per-basket or lump-sum selection
-  - live estimated total calculator
-  - client-side validation
+- Donation link to Prince George Community Foundation Flow Through Fund
 - Individual participant signup form
 - Corporate team signup form
-- Local impact tracker that shows counts of:
-  - individual signups
-  - corporate team signups
-  - donations logged
+- Community impact tracker (individual and team signup counts)
+- Corporate sponsorship tiers with contact info
 
-All form submissions are stored in browser localStorage for demo purposes.
+Form signups are stored in Supabase. See setup below.
+
+### Supabase setup
+
+1. Create a project at [supabase.com](https://supabase.com).
+2. In the SQL Editor, run the schema: copy contents of `supabase/schema.sql` and execute.
+3. In **Project Settings → API**, copy your project URL and `anon` public key.
+4. Edit `config.js` and replace the placeholders:
+   - `supabaseUrl`: your project URL
+   - `supabaseAnonKey`: your anon key
+
+Signups will appear in the **Table Editor** under `individual_signups` and `team_signups`.
 
 ## Run locally
 

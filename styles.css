@@ -244,6 +244,59 @@ select:focus {
   color: var(--danger);
 }
 
+.sponsorship-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tier-card.tier-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.tier-name {
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.tier-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.contact-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact-block h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contact-link {
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  text-decoration: underline;
+}
+
 .site-footer {
   background: #0f172a;
   color: #e2e8f0;
