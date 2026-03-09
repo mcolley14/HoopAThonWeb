@@ -19,24 +19,4 @@ Form signups are stored in Supabase. See setup below.
 
 ### Supabase setup
 
-1. Create a project at [supabase.com](https://supabase.com).
-2. In the SQL Editor, run the schema: copy contents of `supabase/schema.sql` and execute.
-3. In **Project Settings → API**, copy your project URL and `anon` public key.
-4. Edit `config.js` and replace the placeholders:
-   - `supabaseUrl`: your project URL
-   - `supabaseAnonKey`: your anon key
-
 Signups will appear in the **Table Editor** under `individual_signups` and `team_signups`.
-
-## Run locally
-
-Because this is a static site, you can open `index.html` directly in a browser.
-For best results, run a simple local server from the repository root:
-
-```bash
-python3 -m http.server 8080
-```
-
-Then visit:
-
-http://localhost:8080
