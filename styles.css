@@ -213,16 +213,6 @@ select:focus {
   background: var(--primary-dark);
 }
 
-.btn-rotary {
-  background: #f7a81b;
-  color: #0f172a;
-}
-
-.btn-rotary:hover,
-.btn-rotary:focus-visible {
-  background: #e59810;
-}
-
 .btn-secondary {
   background: #fff;
   color: #0f172a;
