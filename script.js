@@ -17,7 +17,7 @@
   const teamCount = document.getElementById("teamCount");
 
   const sponsorshipBtn = document.getElementById("sponsorshipContactBtn");
-  if (sponsorshipBtn && config.sponsorshipEmail) {
+    if (sponsorshipBtn && config.sponsorshipEmail) {
     sponsorshipBtn.href = "mailto:" + config.sponsorshipEmail;
   }
 
