@@ -16,6 +16,11 @@
   const individualCount = document.getElementById("individualCount");
   const teamCount = document.getElementById("teamCount");
 
+  const sponsorshipBtn = document.getElementById("sponsorshipContactBtn");
+  if (sponsorshipBtn && config.sponsorshipEmail) {
+    sponsorshipBtn.href = "mailto:" + config.sponsorshipEmail;
+  }
+
   function setMessage(id, text, isError) {
     const target = document.getElementById(id);
     if (!target) return;
