@@ -165,8 +165,8 @@
 
     setMessage("teamMessage", "Corporate team registration received. Thank you!", false);
     teamForm.reset();
-    updateStats();
+    await updateStats();
   });
 
-  updateStats();
+  void updateStats();
 })();

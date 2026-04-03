@@ -1,8 +1,10 @@
-// Copy this file to config.js and add your Supabase credentials.
-// Find them in: Supabase Dashboard → Project Settings → API
+// Copy this file to config.js and add your values.
+// Supabase: Dashboard → Project Settings → API
 
 window.HOOPATHON_CONFIG = {
   supabaseUrl: "https://your-project-id.supabase.co",
   supabaseAnonKey: "your-anon-key-here",
-  sponsorshipEmail: "sponsorship@example.com",
+  // Optional: sponsorship "Contact Us" button (mailto). corporateContactEmail wins if both set.
+  corporateContactEmail: "",
+  sponsorshipEmail: "",
 };
