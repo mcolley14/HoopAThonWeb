@@ -4,4 +4,5 @@
 window.HOOPATHON_CONFIG = {
   supabaseUrl: "https://your-project-id.supabase.co",
   supabaseAnonKey: "your-anon-key-here",
+  sponsorshipEmail: "sponsorship@example.com",
 };

@@ -307,11 +307,25 @@ select:focus {
   text-decoration: underline;
 }
 
+.sponsor-tier-group {
+  margin-top: 2rem;
+}
+
+.sponsor-tier-group:first-of-type {
+  margin-top: 1.25rem;
+}
+
+.sponsor-tier-heading {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 800;
+  color: var(--text);
+}
+
 .sponsor-thanks-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
-  margin-top: 1.25rem;
 }
 
 .sponsor-thanks-item {
@@ -327,16 +341,14 @@ select:focus {
   text-align: center;
 }
 
-.sponsor-tier-label {
-  margin: 0 0 0.75rem;
-  font-weight: 800;
-  color: var(--muted);
-}
-
 .sponsor-logo {
   width: min(320px, 100%);
   height: auto;
   display: block;
+}
+
+.sponsor-logo--wide {
+  width: min(360px, 100%);
 }
 
 .site-footer {
