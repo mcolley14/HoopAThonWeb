@@ -157,6 +157,50 @@ h2 {
   font-weight: 800;
 }
 
+.collaboration-section {
+  border-top: 4px solid #c59217;
+  background: linear-gradient(180deg, #fffef8 0%, var(--bg) 100%);
+}
+
+.collaboration-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.collaboration-logo {
+  width: min(220px, 100%);
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.collaboration-copy {
+  flex: 1 1 280px;
+  margin: 0;
+}
+
+.collaboration-copy p {
+  margin: 0 0 1rem;
+}
+
+.collaboration-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.signup-intro {
+  max-width: 52rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.signup-intro strong {
+  color: var(--text);
+}
+
 .signup-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
