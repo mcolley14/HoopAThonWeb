@@ -254,6 +254,29 @@ select:focus {
   color: var(--danger);
 }
 
+.form-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #b8c3d4;
+  border-radius: 8px;
+  padding: 0.62rem 0.7rem;
+  font: inherit;
+  background: #fff;
+  resize: vertical;
+  min-height: 6rem;
+}
+
+textarea:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.25);
+  border-color: var(--primary);
+}
+
 .sponsorship-tiers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

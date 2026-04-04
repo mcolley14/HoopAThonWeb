@@ -34,6 +34,15 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
+  function parseTeamParticipantNames(raw) {
+    return String(raw || "")
+      .split(/\r?\n/)
+      .map(function (line) {
+        return line.trim();
+      })
+      .filter(Boolean);
+  }
+
   async function updateStats() {
     if (useSupabase && supabase) {
       try {
@@ -110,7 +119,7 @@
     setMessage("individualMessage", "You are registered for HoopAThon. Thank you!", false);
     individualForm.reset();
     document.getElementById("participantGoal").value = "500";
-    updateStats();
+    await updateStats();
   });
 
   teamForm.addEventListener("submit", async function (event) {
@@ -120,6 +129,9 @@
     const teamContact = String(document.getElementById("teamContact").value || "").trim();
     const teamEmail = String(document.getElementById("teamEmail").value || "").trim();
     const teamSize = Number(document.getElementById("teamSize").value || 0);
+    const participantNames = parseTeamParticipantNames(
+      document.getElementById("teamParticipantNames").value
+    );
 
     if (!companyName) {
       setMessage("teamMessage", "Please enter company name.", true);
@@ -137,6 +149,22 @@
       setMessage("teamMessage", "Team size must be at least 2.", true);
       return;
     }
+    if (participantNames.length < 2) {
+      setMessage(
+        "teamMessage",
+        "Please list at least two participant names (one per line).",
+        true
+      );
+      return;
+    }
+    if (participantNames.length > teamSize) {
+      setMessage(
+        "teamMessage",
+        "You listed more names than your expected team size. Add rows or increase team size.",
+        true
+      );
+      return;
+    }
 
     if (useSupabase && supabase) {
       const { error } = await supabase.from("team_signups").insert({
@@ -144,6 +172,7 @@
         team_contact: teamContact,
         team_email: teamEmail,
         team_size: teamSize,
+        participant_names: participantNames.join("\n"),
       });
 
       if (error) {
@@ -165,8 +194,8 @@
 
     setMessage("teamMessage", "Corporate team registration received. Thank you!", false);
     teamForm.reset();
-    updateStats();
+    await updateStats();
   });
 
-  updateStats();
+  void updateStats();
 })();

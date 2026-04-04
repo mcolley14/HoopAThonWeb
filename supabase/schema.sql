@@ -18,6 +18,7 @@ create table if not exists team_signups (
   team_contact text not null,
   team_email text not null,
   team_size integer not null,
+  participant_names text not null,
   submitted_at timestamptz default now()
 );
 

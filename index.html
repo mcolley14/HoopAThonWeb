@@ -269,6 +269,20 @@
                   <label for="teamSize">Expected Team Size</label>
                   <input id="teamSize" name="teamSize" type="number" min="2" step="1" required />
                 </div>
+                <div class="form-row">
+                  <label for="teamParticipantNames">Participant names</label>
+                  <textarea
+                    id="teamParticipantNames"
+                    name="teamParticipantNames"
+                    rows="6"
+                    required
+                    placeholder="One full name per line (e.g. Jane Smith)"
+                  ></textarea>
+                  <p class="form-hint">
+                    List everyone on your team who will participate. One name per line; include at
+                    least two names. If your roster is not final, list who you know now.
+                  </p>
+                </div>
                 <button class="btn btn-primary" type="submit">Register Corporate Team</button>
                 <p class="form-message" id="teamMessage" aria-live="polite"></p>
               </form>
