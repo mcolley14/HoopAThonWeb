@@ -21,22 +21,24 @@ Form signups are stored in Supabase. See setup below.
 
 1. Create a project at [supabase.com](https://supabase.com).
 2. In the SQL Editor, run the schema: copy contents of `supabase/schema.sql` and execute.
+   If your project already has `team_signups` from an older schema, also run
+   `supabase/migration_add_participant_names.sql` once so corporate teams can store participant names.
 3. In **Project Settings → API**, copy your project URL and `anon` public key.
-4. Copy `config.example.js` to `config.js` and fill in your values (see **Configuration** below).
+4. Copy `config.example.js` to `config.js`, fill in your Supabase URL and anon key, then **commit `config.js`** and push so GitHub Pages can load it (simplest setup).
 
 Signups will appear in the **Table Editor** under `individual_signups` and `team_signups`.
 
 ### Configuration
 
-`config.js` is **not** committed to this repository (see `.gitignore`). After cloning:
-
 ```bash
 cp config.example.js config.js
 ```
 
-Edit `config.js` with your Supabase URL, anon key, and optional `sponsorshipEmail` / `corporateContactEmail` for the sponsorship contact button.
+Edit `config.js` with your **Project URL**, **anon public key** (from Supabase → Project Settings → API), and optional `sponsorshipEmail` or `corporateContactEmail` for the sponsorship Contact Us button.
 
-**Security:** If Supabase keys were ever committed to git history, rotate the **anon** key in Supabase (**Project Settings → API → Regenerate**).
+Commit and push `config.js` with the rest of the site. The anon key is meant for browser use; protect your project with Row Level Security (already in `schema.sql`).
+
+**Security:** If keys were ever exposed, rotate the anon key in Supabase (**Project Settings → API → Regenerate**).
 
 ### Run locally
 
@@ -53,4 +55,4 @@ http://localhost:8080
 
 ### GitHub Pages
 
-Ensure `config.js` exists in the deployed site (add it in your deploy step or upload it alongside the built files). Without it, signups will not reach Supabase.
+With `config.js` committed on your `main` branch (same folder as `index.html`), Pages serves it automatically. No extra deploy step.
