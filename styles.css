@@ -201,6 +201,25 @@ h2 {
   color: var(--text);
 }
 
+.pledge-form-download {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 0 0 1.75rem;
+}
+
+.pledge-form-btn {
+  text-decoration: none;
+}
+
+.pledge-form-hint {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 28rem;
+  line-height: 1.45;
+}
+
 .signup-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
