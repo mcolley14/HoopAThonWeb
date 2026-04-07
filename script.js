@@ -13,8 +13,7 @@
 
   const individualForm = document.getElementById("individualForm");
   const teamForm = document.getElementById("teamForm");
-  const individualCount = document.getElementById("individualCount");
-  const teamCount = document.getElementById("teamCount");
+  const participantCount = document.getElementById("participantCount");
 
   const sponsorshipBtn = document.getElementById("sponsorshipContactBtn");
   if (sponsorshipBtn) {
@@ -44,21 +43,19 @@
   }
 
   async function updateStats() {
+    if (!participantCount) return;
     if (useSupabase && supabase) {
       try {
         const { data, error } = await supabase.rpc("get_signup_counts");
         if (error) throw error;
         if (data) {
-          individualCount.textContent = String(data.individuals ?? 0);
-          teamCount.textContent = String(data.teams ?? 0);
+          participantCount.textContent = String(data.participants ?? 0);
         }
       } catch (err) {
-        individualCount.textContent = "—";
-        teamCount.textContent = "—";
+        participantCount.textContent = "—";
       }
     } else {
-      individualCount.textContent = "—";
-      teamCount.textContent = "—";
+      participantCount.textContent = "—";
     }
   }
 

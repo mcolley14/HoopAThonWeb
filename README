@@ -12,7 +12,9 @@ fundraiser held in April.
 - Donation link to Prince George Community Foundation Flow Through Fund
 - Individual participant signup form
 - Corporate team signup form
-- Community impact tracker (individual and team signup counts)
+- Participant counter (individual signups plus expected shooters on corporate teams)
 - Corporate sponsorship tiers with contact info
 
-Form signups are stored in Supabase. 
+Form signups are stored in Supabase. If you already ran an older schema, execute
+`supabase/migration_participant_counter_rpc.sql` once so the participant counter uses the new total.
+

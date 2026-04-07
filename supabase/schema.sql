@@ -37,7 +37,7 @@ create policy "Allow anonymous insert on team_signups"
   to anon
   with check (true);
 
--- Function to get signup counts (anon can call without seeing row data)
+-- Total participants: each individual signup + sum of expected team sizes
 create or replace function get_signup_counts()
 returns json
 language sql
@@ -45,8 +45,9 @@ security definer
 set search_path = public
 as $$
   select json_build_object(
-    'individuals', (select count(*)::int from individual_signups),
-    'teams', (select count(*)::int from team_signups)
+    'participants',
+    coalesce((select count(*)::int from individual_signups), 0)
+      + coalesce((select sum(team_size)::int from team_signups), 0)
   );
 $$;
 

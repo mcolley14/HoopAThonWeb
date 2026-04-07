@@ -139,6 +139,27 @@ h2 {
   padding: 1rem 1.1rem;
 }
 
+.participant-counter-intro {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 36rem;
+}
+
+.participant-counter-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.stat-value--large {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
