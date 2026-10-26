@@ -3,7 +3,7 @@ README for HoopAThon Website
 ## HoopAThon Event Page
 
 This repository contains a static non-profit event page for HoopAThon, an annual
-fundraiser held in April.
+community fundraiser in Prince George.
 
 ### Included functionality
 
@@ -15,6 +15,5 @@ fundraiser held in April.
 - Participant counter (individual signups plus expected shooters on corporate teams)
 - Corporate sponsorship tiers with contact info
 
-Form signups are stored in Supabase. If you already ran an older schema, execute
-`supabase/migration_participant_counter_rpc.sql` once so the participant counter uses the new total.
-
+Form signups are stored in a Google Sheet through a Google Apps Script web app.
+Setup: `apps-script/README.md`. The old Supabase schema in `supabase/` is no longer used.

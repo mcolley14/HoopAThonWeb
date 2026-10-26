@@ -1,15 +1,32 @@
 (function () {
   const config = window.HOOPATHON_CONFIG || {};
-  const supabaseUrl = config.supabaseUrl || "";
-  const supabaseAnonKey = config.supabaseAnonKey || "";
-  const useSupabase =
-    supabaseUrl &&
-    supabaseAnonKey &&
-    !supabaseUrl.includes("your-project-id");
+  // Google Apps Script web app URL (see apps-script/README.md).
+  const endpoint = config.signupEndpoint || "";
+  const useEndpoint = endpoint && !endpoint.includes("YOUR_DEPLOYMENT_ID");
 
-  const supabase = useSupabase
-    ? window.supabase.createClient(supabaseUrl, supabaseAnonKey)
-    : null;
+  // No custom headers, so the browser sends a "simple" request and skips the
+  // CORS preflight, which Apps Script cannot answer.
+  async function submitSignup(payload) {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json();
+    if (!result.ok) throw new Error(result.error || "Registration failed.");
+    return result;
+  }
+
+  async function withPending(form, task) {
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    try {
+      return await task();
+    } finally {
+      button.disabled = false;
+      button.removeAttribute("aria-busy");
+    }
+  }
 
   const individualForm = document.getElementById("individualForm");
   const teamForm = document.getElementById("teamForm");
@@ -44,13 +61,11 @@
 
   async function updateStats() {
     if (!participantCount) return;
-    if (useSupabase && supabase) {
+    if (useEndpoint) {
       try {
-        const { data, error } = await supabase.rpc("get_signup_counts");
-        if (error) throw error;
-        if (data) {
-          participantCount.textContent = String(data.participants ?? 0);
-        }
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        participantCount.textContent = String(data.participants ?? 0);
       } catch (err) {
         participantCount.textContent = "—";
       }
@@ -88,26 +103,30 @@
       return;
     }
 
-    if (useSupabase && supabase) {
-      const { error } = await supabase.from("individual_signups").insert({
-        participant_name: participantName,
-        participant_email: participantEmail,
-        participant_phone: participantPhone || null,
-        participant_goal: participantGoal,
-      });
-
-      if (error) {
-        setMessage(
-          "individualMessage",
-          "Registration failed. Please try again or contact us.",
-          true
-        );
-        return;
-      }
-    } else {
+    if (!useEndpoint) {
       setMessage(
         "individualMessage",
-        "Supabase is not configured. Add your credentials to config.js.",
+        "Signups are not open yet. Please check back soon.",
+        true
+      );
+      return;
+    }
+
+    try {
+      await withPending(individualForm, function () {
+        return submitSignup({
+          type: "individual",
+          website: individualForm.elements.website.value,
+          participantName: participantName,
+          participantEmail: participantEmail,
+          participantPhone: participantPhone,
+          participantGoal: participantGoal,
+        });
+      });
+    } catch (err) {
+      setMessage(
+        "individualMessage",
+        "Registration failed. Please try again or contact us.",
         true
       );
       return;
@@ -163,27 +182,27 @@
       return;
     }
 
-    if (useSupabase && supabase) {
-      const { error } = await supabase.from("team_signups").insert({
-        company_name: companyName,
-        team_contact: teamContact,
-        team_email: teamEmail,
-        team_size: teamSize,
-        participant_names: participantNames.join("\n"),
-      });
+    if (!useEndpoint) {
+      setMessage("teamMessage", "Signups are not open yet. Please check back soon.", true);
+      return;
+    }
 
-      if (error) {
-        setMessage(
-          "teamMessage",
-          "Registration failed. Please try again or contact us.",
-          true
-        );
-        return;
-      }
-    } else {
+    try {
+      await withPending(teamForm, function () {
+        return submitSignup({
+          type: "team",
+          website: teamForm.elements.website.value,
+          companyName: companyName,
+          teamContact: teamContact,
+          teamEmail: teamEmail,
+          teamSize: teamSize,
+          participantNames: participantNames.join("\n"),
+        });
+      });
+    } catch (err) {
       setMessage(
         "teamMessage",
-        "Supabase is not configured. Add your credentials to config.js.",
+        "Registration failed. Please try again or contact us.",
         true
       );
       return;

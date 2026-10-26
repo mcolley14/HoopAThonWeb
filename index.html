@@ -87,11 +87,11 @@
             <dl class="facts">
               <div>
                 <dt>Date</dt>
-                <dd>April 11th, 2026</dd>
+                <dd>March 2027</dd>
               </div>
               <div>
                 <dt>Tip-off</dt>
-                <dd>12pm</dd>
+                <dd>Time to be announced</dd>
               </div>
               <div>
                 <dt>Where</dt>
@@ -309,6 +309,9 @@
             <article class="panel">
               <h3>Individual participant</h3>
               <form id="individualForm" novalidate>
+                <div class="hp" aria-hidden="true">
+                  <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+                </div>
                 <div class="form-row">
                   <label for="participantName">Full name</label>
                   <input id="participantName" name="participantName" type="text" autocomplete="name" required />
@@ -341,6 +344,9 @@
             <article class="panel">
               <h3>Corporate team</h3>
               <form id="teamForm" novalidate>
+                <div class="hp" aria-hidden="true">
+                  <label>Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+                </div>
                 <div class="form-row">
                   <label for="companyName">Company name</label>
                   <input id="companyName" name="companyName" type="text" autocomplete="organization" required />
@@ -389,7 +395,6 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>
   </body>
