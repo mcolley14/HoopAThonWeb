@@ -113,7 +113,7 @@
       return;
     }
 
-    setMessage("individualMessage", "You are registered for HoopAThon. Thank you!", false);
+    setMessage("individualMessage", "You are registered for Hoop-A-Thon. Thank you.", false);
     individualForm.reset();
     document.getElementById("participantGoal").value = "500";
     await updateStats();
@@ -189,7 +189,7 @@
       return;
     }
 
-    setMessage("teamMessage", "Corporate team registration received. Thank you!", false);
+    setMessage("teamMessage", "Corporate team registration received. Thank you.", false);
     teamForm.reset();
     await updateStats();
   });

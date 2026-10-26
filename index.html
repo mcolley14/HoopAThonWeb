@@ -4,277 +4,325 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hoop-A-Thon | Shoot for a Cause</title>
+    <meta
+      name="description"
+      content="Hoop-A-Thon is Prince George's annual free-throw fundraiser at the UNBC Sports Centre. Collect pledges, shoot free throws, and raise money for families in crisis."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hoop-A-Thon | Shoot for a Cause" />
+    <meta
+      property="og:description"
+      content="Prince George's annual free-throw fundraiser at the UNBC Sports Centre."
+    />
+    <meta property="og:url" content="https://www.pghoopathon.com/" />
+    <meta name="theme-color" content="#14213d" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23e8782a' stroke='%2314213d' stroke-width='2'/%3E%3Cpath d='M2 16h28M16 2v28M6 6c6 5 6 15 0 20M26 6c-6 5-6 15 0 20' fill='none' stroke='%2314213d' stroke-width='2'/%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Geist:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="#top" class="brand">HoopAThon</a>
+        <a href="#top" class="brand" aria-label="Hoop-A-Thon home">
+          <svg class="brand-ball" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="14" />
+            <path d="M2 16h28M16 2v28M6 6c6 5 6 15 0 20M26 6c-6 5-6 15 0 20" />
+          </svg>
+          Hoop-A-Thon
+        </a>
         <nav aria-label="Primary">
           <ul class="nav-list">
             <li><a href="#about">About</a></li>
-            <li><a href="#collaboration">Collaboration</a></li>
-            <li><a href="#pledges">How Pledges Work</a></li>
+            <li><a href="#collaboration">Partners</a></li>
+            <li><a href="#pledges">Pledges</a></li>
             <li><a href="#donate">Donate</a></li>
             <li><a href="#sponsorship">Sponsorship</a></li>
-            <li><a href="#signup">Sign Up</a></li>
           </ul>
         </nav>
+        <a class="btn btn-accent btn-sm nav-cta" href="#signup">Sign up</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-content">
-          <p class="eyebrow">Annual Event • Every April</p>
-          <h1>Hoop-A-Thon: Shoot Free Throws. Make a difference in your community.</h1>
-          <p class="hero-text">
-            Join our annual Hoop-A-Thon fundraiser April 11th, 2026 starting at 12pm at the UNBC Sports Center. Participants collect
-            pledges, shoot free throws, and raise vital funds for families in
-            crisis.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-rotary" href="#signup">Sign Up to Participate</a>
-            <a
-              href="https://pgcf.ca/fund/Prince-George-Rotary-Fund"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              Donate Now
-            </a>
+    <main id="main">
+      <section class="hero" id="top">
+        <svg class="hero-court" viewBox="0 0 600 600" aria-hidden="true" preserveAspectRatio="xMaxYMid slice">
+          <rect x="200" y="0" width="200" height="300" />
+          <circle cx="300" cy="300" r="100" />
+          <path d="M60 0v120a240 240 0 0 0 480 0V0" />
+          <circle cx="300" cy="40" r="18" />
+          <line x1="260" y1="20" x2="340" y2="20" />
+        </svg>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Annual event · Every April · Prince George</p>
+            <h1>Shoot free throws. <span>Make a difference in your community.</span></h1>
+            <p class="hero-text">
+              Join our annual Hoop-A-Thon fundraiser. Participants collect pledges, shoot
+              free throws, and raise vital funds for families in crisis.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-accent" href="#signup">Sign up to participate</a>
+              <a
+                href="https://pgcf.ca/fund/Prince-George-Rotary-Fund"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-ghost"
+              >
+                Donate now
+              </a>
+            </div>
           </div>
+
+          <aside class="hero-card" aria-label="Event details">
+            <dl class="facts">
+              <div>
+                <dt>Date</dt>
+                <dd>April 11th, 2026</dd>
+              </div>
+              <div>
+                <dt>Tip-off</dt>
+                <dd>12pm</dd>
+              </div>
+              <div>
+                <dt>Where</dt>
+                <dd>UNBC Sports Centre</dd>
+              </div>
+            </dl>
+            <div class="counter" id="impact">
+              <p class="stat-value" id="participantCount" aria-live="polite">0</p>
+              <p class="stat-label">
+                Participants registered so far, individual shooters plus expected spots on
+                corporate teams.
+              </p>
+            </div>
+          </aside>
         </div>
       </section>
 
       <section class="section" id="about">
-        <div class="container">
-          <h2>What is HoopAThon?</h2>
-          <p>
-            Hoop-A-Thon is a community event where participants gather support from
-            family, friends, coworkers, and neighbors by collecting pledges.
-            During the event, each participant shoots free throws and funds are
-            raised based on their pledge commitments.
-          </p>
-          <p>
-            Proceeds from this year will distrubed to 
-            <strong>local youth at risk, seniors living in isolation and the new Ronald McDonald House.</strong>
-            Your support helps families stay close to loved ones receiving care.
-          </p>
-        </div>
-      </section>
-
-      <section class="section collaboration-section" id="collaboration">
-        <div class="container">
-          <h2>In Collaboration With</h2>
-          <div class="collaboration-layout">
-            <img
-              class="collaboration-logo"
-              src="assets/unbc-timberwolves-basketball.png"
-              alt="UNBC Timberwolves Basketball logo"
-              width="220"
-              loading="lazy"
-            />
-            <div class="collaboration-copy">
-              <p>
-                Hoop-A-Thon is proud to partner with
-                <strong>UNBC Timberwolves Basketball</strong>. Their support helps
-                bring our community together at the UNBC Sports Centre for a day of
-                free throws, pledges, and giving back.
-              </p>
-              <p>
-                Thank you to the Timberwolves for helping make this event possible.
-              </p>
-            </div>
+        <div class="container split">
+          <h2>What is Hoop-A-Thon?</h2>
+          <div class="prose">
+            <p>
+              Hoop-A-Thon is a community event where participants gather support from
+              family, friends, coworkers, and neighbours by collecting pledges. During the
+              event, each participant shoots free throws and funds are raised based on their
+              pledge commitments.
+            </p>
+            <p>
+              Your support helps families stay close to loved ones receiving care. Proceeds
+              from this year will be distributed to:
+            </p>
+            <ul class="beneficiaries">
+              <li>Local youth at risk</li>
+              <li>Seniors living in isolation</li>
+              <li>The new Ronald McDonald House</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="section alt" id="pledges">
-        <div class="container">
-          <h2>How Pledges Work</h2>
-          <div class="cards">
-            <article class="card">
-              <h3>Per Basket Pledge</h3>
-              <p>
-                Supporters can pledge an amount for each free throw made (for
-                example, $2 per basket). The total is calculated after the event.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Lump Sum Pledge</h3>
-              <p>
-                Supporters can choose a one-time flat donation regardless of the
-                number of baskets made.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Mixed Support</h3>
-              <p>
-                Donors can combine both options to maximize impact and help
-                participants reach their fundraising goals.
-              </p>
-            </article>
+      <section class="section section-tint" id="collaboration">
+        <div class="container partner">
+          <img
+            class="partner-logo"
+            src="assets/unbc-timberwolves-basketball.png"
+            alt="UNBC Timberwolves Basketball logo"
+            width="300"
+            height="310"
+          />
+          <div class="prose">
+            <p class="kicker">In collaboration with</p>
+            <h2>UNBC Timberwolves Basketball</h2>
+            <p>
+              Hoop-A-Thon is proud to partner with UNBC Timberwolves Basketball. Their
+              support helps bring our community together at the UNBC Sports Centre for a day
+              of free throws, pledges, and giving back.
+            </p>
+            <p>Thank you to the Timberwolves for helping make this event possible.</p>
           </div>
         </div>
       </section>
 
-      <section class="section" id="impact">
-        <div class="container narrow">
-          <h2>Participant counter</h2>
-          <p class="participant-counter-intro">
-            Everyone registered so far—individual shooters plus expected spots on corporate teams.
-          </p>
-          <div class="participant-counter-card">
-            <p class="stat-label">Participants</p>
-            <p class="stat-value stat-value--large" id="participantCount">0</p>
-          </div>
+      <section class="section" id="pledges">
+        <div class="container split">
+          <h2>How pledges work</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-num">01</span>
+              <div>
+                <h3>Per basket pledge</h3>
+                <p>
+                  Supporters can pledge an amount for each free throw made (for example, $2
+                  per basket). The total is calculated after the event.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <div>
+                <h3>Lump sum pledge</h3>
+                <p>
+                  Supporters can choose a one-time flat donation regardless of the number of
+                  baskets made.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <div>
+                <h3>Mixed support</h3>
+                <p>
+                  Donors can combine both options to maximize impact and help participants
+                  reach their fundraising goals.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <section class="section alt" id="donate">
-        <div class="container narrow">
-          <h2>Make a Donation</h2>
-          <p>
-            We gratefully accept donations and provide an instant tax receipt through our online partner, the Prince George Community Foundation.
-          </p>
+      <section class="donate-band" id="donate">
+        <div class="container donate-inner">
+          <div>
+            <h2>Make a donation</h2>
+            <p>
+              We gratefully accept donations and provide an instant tax receipt through our
+              online partner, the Prince George Community Foundation.
+            </p>
+          </div>
           <a
             href="https://pgcf.ca/fund/Prince-George-Rotary-Fund"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-primary"
+            class="btn btn-dark"
           >
-            Donate Now
+            Donate now
           </a>
         </div>
       </section>
 
       <section class="section" id="sponsorship">
-        <div class="container narrow">
-          <h2>Corporate Sponsorship</h2>
-          <p>
-            Support Hoop-A-Thon as a corporate sponsor. We offer three sponsorship
-            tiers. Contact us to express interest and arrange your donation.
-          </p>
-          <div class="sponsorship-tiers">
-            <article class="tier-card tier-display">
-              <span class="tier-name">Hoop Sponsor</span>
-              <span class="tier-price">$500</span>
-            </article>
-            <article class="tier-card tier-display">
-              <span class="tier-name">Court Sponsor</span>
-              <span class="tier-price">$1,500</span>
-            </article>
-            <article class="tier-card tier-display">
-              <span class="tier-name">Major Event Sponsor</span>
-              <span class="tier-price">$5,000</span>
-            </article>
-          </div>
-          <div class="contact-block">
-            <h3>Sponsorship Inquiries</h3>
-            <p>
-              Interested in becoming a sponsor? Contact us to discuss options and
-              arrange your donation.
+        <div class="container split">
+          <div>
+            <h2>Corporate sponsorship</h2>
+            <p class="muted">
+              Support Hoop-A-Thon as a corporate sponsor. We offer three sponsorship tiers.
+              Contact us to express interest and arrange your donation.
             </p>
-            <a id="sponsorshipContactBtn" class="btn btn-primary" href="mailto:sponsorship@hoopathon.ca">Contact Us</a>
+          </div>
+          <div>
+            <ul class="tiers">
+              <li class="tier tier-featured">
+                <span class="tier-name">Major Event Sponsor</span>
+                <span class="tier-price">$5,000</span>
+              </li>
+              <li class="tier">
+                <span class="tier-name">Court Sponsor</span>
+                <span class="tier-price">$1,500</span>
+              </li>
+              <li class="tier">
+                <span class="tier-name">Hoop Sponsor</span>
+                <span class="tier-price">$500</span>
+              </li>
+            </ul>
+            <div class="contact-block">
+              <p>
+                <strong>Interested in becoming a sponsor?</strong> Contact us to discuss
+                options and arrange your donation.
+              </p>
+              <a
+                id="sponsorshipContactBtn"
+                class="btn btn-primary"
+                href="mailto:sponsorship@hoopathon.ca"
+                >Contact us</a
+              >
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="sponsor-thanks">
+      <section class="section section-tint" id="sponsor-thanks">
         <div class="container">
-          <h2>Thank you to our sponsors!</h2>
-          <p>
-            We sincerely thank our sponsors for their generous support in helping make Hoop-A-Thon possible.
+          <h2>Thank you to our sponsors</h2>
+          <p class="muted thanks-intro">
+            We sincerely thank our sponsors for their generous support in helping make
+            Hoop-A-Thon possible.
           </p>
 
-          <div class="sponsor-tier-group">
-            <h3 class="sponsor-tier-heading">Major Event Sponsor</h3>
-            <div class="sponsor-thanks-grid">
-              <div class="sponsor-thanks-item">
-                <img
-                  class="sponsor-logo"
-                  src="assets/canadian-tire.png"
-                  alt="Canadian Tire logo"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="sponsor-tier-group">
-            <h3 class="sponsor-tier-heading">Hoop Sponsors</h3>
-            <div class="sponsor-thanks-grid">
-              <div class="sponsor-thanks-item">
-                <img
-                  class="sponsor-logo"
-                  src="assets/hart-drugs.png"
-                  alt="IDA HART Drugs logo"
-                />
-              </div>
-              <div class="sponsor-thanks-item">
-                <img
-                  class="sponsor-logo sponsor-logo--wide"
-                  src="assets/edward-jones.png"
-                  alt="Edward Jones logo"
-                />
-              </div>
-              <div class="sponsor-thanks-item">
-                <img
-                  class="sponsor-logo"
-                  src="assets/pg-floor-fashions.png"
-                  alt="PG Floor Fashions Ltd. logo"
-                />
-              </div>
-            </div>
+          <div class="logo-wall">
+            <figure class="logo-tile logo-tile--major">
+              <img src="assets/canadian-tire.png" alt="Canadian Tire logo" />
+              <figcaption>Major Event Sponsor</figcaption>
+            </figure>
+            <figure class="logo-tile">
+              <img src="assets/hart-drugs.png" alt="IDA HART Drugs logo" />
+              <figcaption>Hoop Sponsor</figcaption>
+            </figure>
+            <figure class="logo-tile">
+              <img src="assets/edward-jones.png" alt="Edward Jones logo" />
+              <figcaption>Hoop Sponsor</figcaption>
+            </figure>
+            <figure class="logo-tile">
+              <img
+                src="assets/pg-floor-fashions.png"
+                alt="PG Floor Fashions Ltd. logo"
+              />
+              <figcaption>Hoop Sponsor</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <section class="section" id="signup">
         <div class="container">
-          <h2>Sign Up for HoopAThon</h2>
-          <p class="signup-intro">
-            Showing up matters most—your presence alone is more than enough. If you
-            can, we&apos;d love each shooter to aim for raising at least
-            <strong>$100</strong> in pledges; every dollar helps, and there is no
-            pressure to hit a specific number.
-          </p>
-          <p class="pledge-form-download">
-            <a
-              href="downloads/HoopAThon-Pledge-Form.pdf"
-              download="HoopAThon-Pledge-Form.pdf"
-              class="btn btn-secondary pledge-form-btn"
-            >
-              Download pledge form (PDF)
-            </a>
-            <span class="pledge-form-hint"
-              >Print or save this form to record supporter names and pledge amounts.</span
-            >
-          </p>
+          <div class="signup-head">
+            <h2>Sign up for Hoop-A-Thon</h2>
+            <p class="muted">
+              Showing up matters most. Your presence alone is more than enough. If you can,
+              we&apos;d love each shooter to aim for raising at least <strong>$100</strong> in
+              pledges; every dollar helps, and there is no pressure to hit a specific number.
+            </p>
+            <p class="pledge-form-download">
+              <a
+                href="downloads/HoopAThon-Pledge-Form.pdf"
+                download="HoopAThon-Pledge-Form.pdf"
+                class="text-link"
+              >
+                Download the pledge form (PDF) <span aria-hidden="true">↓</span>
+              </a>
+              <span class="hint">Print it to record supporter names and pledge amounts.</span>
+            </p>
+          </div>
+
           <div class="signup-grid">
             <article class="panel">
-              <h3>Individual Participant Signup</h3>
+              <h3>Individual participant</h3>
               <form id="individualForm" novalidate>
                 <div class="form-row">
-                  <label for="participantName">Full Name</label>
-                  <input id="participantName" name="participantName" type="text" required />
+                  <label for="participantName">Full name</label>
+                  <input id="participantName" name="participantName" type="text" autocomplete="name" required />
                 </div>
                 <div class="form-row">
                   <label for="participantEmail">Email</label>
-                  <input id="participantEmail" name="participantEmail" type="email" required />
+                  <input id="participantEmail" name="participantEmail" type="email" autocomplete="email" required />
                 </div>
                 <div class="form-row">
-                  <label for="participantPhone">Phone</label>
-                  <input id="participantPhone" name="participantPhone" type="tel" />
+                  <label for="participantPhone">Phone <span class="optional">optional</span></label>
+                  <input id="participantPhone" name="participantPhone" type="tel" autocomplete="tel" />
                 </div>
                 <div class="form-row">
-                  <label for="participantGoal">Fundraising Goal (CAD)</label>
+                  <label for="participantGoal">Fundraising goal (CAD)</label>
                   <input
                     id="participantGoal"
                     name="participantGoal"
@@ -282,47 +330,50 @@
                     min="0"
                     step="1"
                     value="500"
+                    inputmode="numeric"
                   />
                 </div>
-                <button class="btn btn-primary" type="submit">Register as Individual</button>
+                <button class="btn btn-primary btn-block" type="submit">Register as individual</button>
                 <p class="form-message" id="individualMessage" aria-live="polite"></p>
               </form>
             </article>
 
             <article class="panel">
-              <h3>Corporate Team Signup</h3>
+              <h3>Corporate team</h3>
               <form id="teamForm" novalidate>
                 <div class="form-row">
-                  <label for="companyName">Company Name</label>
-                  <input id="companyName" name="companyName" type="text" required />
+                  <label for="companyName">Company name</label>
+                  <input id="companyName" name="companyName" type="text" autocomplete="organization" required />
                 </div>
                 <div class="form-row">
-                  <label for="teamContact">Team Contact Name</label>
+                  <label for="teamContact">Team contact name</label>
                   <input id="teamContact" name="teamContact" type="text" required />
                 </div>
-                <div class="form-row">
-                  <label for="teamEmail">Corporate Email</label>
-                  <input id="teamEmail" name="teamEmail" type="email" placeholder="e.g. events@company.com" required />
-                </div>
-                <div class="form-row">
-                  <label for="teamSize">Expected Team Size</label>
-                  <input id="teamSize" name="teamSize" type="number" min="2" step="1" required />
+                <div class="form-row form-row-pair">
+                  <div>
+                    <label for="teamEmail">Corporate email</label>
+                    <input id="teamEmail" name="teamEmail" type="email" placeholder="events@company.com" required />
+                  </div>
+                  <div>
+                    <label for="teamSize">Team size</label>
+                    <input id="teamSize" name="teamSize" type="number" min="2" step="1" inputmode="numeric" required />
+                  </div>
                 </div>
                 <div class="form-row">
                   <label for="teamParticipantNames">Participant names</label>
                   <textarea
                     id="teamParticipantNames"
                     name="teamParticipantNames"
-                    rows="6"
+                    rows="5"
                     required
-                    placeholder="One full name per line (e.g. Jane Smith)"
+                    placeholder="One full name per line"
                   ></textarea>
-                  <p class="form-hint">
-                    List everyone on your team who will participate. One name per line; include at
+                  <p class="hint">
+                    List everyone on your team who will participate, one name per line, at
                     least two names. If your roster is not final, list who you know now.
                   </p>
                 </div>
-                <button class="btn btn-primary" type="submit">Register Corporate Team</button>
+                <button class="btn btn-primary btn-block" type="submit">Register corporate team</button>
                 <p class="form-message" id="teamMessage" aria-live="polite"></p>
               </form>
             </article>
@@ -332,11 +383,9 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>
-          HoopAThon • Annual April Fundraiser • Supporting Ronald McDonald House
-          UHNBC in Prince George
-        </p>
+      <div class="container footer-inner">
+        <span class="footer-brand">Hoop-A-Thon</span>
+        <p>Annual fundraiser in Prince George, BC. Supporting Ronald McDonald House UHNBC.</p>
       </div>
     </footer>
 
